@@ -65,8 +65,10 @@
   </ul>
 
   <script>
+    //토스트ui 시작
     const Editor = toastui.Editor;
 
+    //신택스 하이라이트 
     function katexPlugin() {
       const toHTMLRenderers = {
         katex(node) {
@@ -87,8 +89,10 @@
       return { toHTMLRenderers };
     }
 
+    //초기 내용
     const viewer1MarkdownSource = "로딩중...";
 
+    //토스트에디터 설정
     const viewer1 = Editor.factory({
       el: document.querySelector("#viewer-1"),
       viewer: true,
@@ -103,6 +107,7 @@
       ]
     });
 
+    //페이지 보여주기
     function showPage(pageNo) {
       fetch(pageNo + ".md")
         .then(response => response.text()) // 응답에서 본문만 취한다.
@@ -116,6 +121,7 @@
         })
     }
 
+    //4번 페이지 보여주기
     showPage(4)
 
   </script>
